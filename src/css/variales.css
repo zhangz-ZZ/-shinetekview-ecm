@@ -1,0 +1,44 @@
+:root {
+  /* 颜色越深，数字越大 */
+  --blue-2: #8dd7e0;
+  --blue-3: #0AE5FF;
+  --blue-5: #789cff;
+  --blue-7: #205aff;
+  --blue-8: #035ef4;
+  --blue-10: #3F4CFE;
+  --blue-10-5: #0053CE;
+  --blue-11: #32599A;
+  --blue-11-5: #264578;
+  --blue-12: #133163;
+  --blue-13: #14366E;
+  --blue-14: #0d387e;
+  --blue: #10346B;
+  --blue-15: #112B56;
+  --blue-17: #0A2043;
+  --blue-19: #081B3A;
+
+  --blue-green: #3AB3C9;
+  --blue-green-15: #639FAA;
+
+  --grey-2: rgb(202, 202, 202);
+  --grey-6: rgb(202, 202, 202);
+  --grey-8: rgb(153, 153, 153);
+  --grey-9: #696b6d;
+  --grey: #444;
+  --grey-10: rgba(51, 51, 51, 1);
+  --grey-15: #B3B3B3;
+
+  --white: #fff;
+  --white-10: #d2dee7;
+
+  --black: #080C16;
+
+  --red: #FF0000;
+
+  --yellow: #FFC000;
+
+  --header-height: 60px;
+  --title-height: 54px;
+  --sidebar-width: 290px;
+  --submodule-menu: 70px;
+}

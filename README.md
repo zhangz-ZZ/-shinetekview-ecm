@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+该项目由是由 [Create React App](https://github.com/facebook/create-react-app) 创建的
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+create-react-app 创建的项目基于 Webpack + ES6 
 
-## Available Scripts
+如果您未拥有 `yarn`：
 
-In the project directory, you can run:
+  1. 可参考文档 `https://yarn.bootcss.com/docs/install/#windows-stable` 安装 `yarn`
+  2. 可使用 `npm`
 
-### `yarn start`
+## 启动:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  #### 方式一： `yarn`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+    1. `yarn install` 安装依赖
+    2. `yarn start`
 
-### `yarn test`
+  #### 方式二： `npm`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    1. `npm install` 安装依赖
+    2. `npm start`
 
-### `yarn build`
+  您可以在浏览器 `http://localhost:3000` 中查看项目。
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 开发：
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  #### 在开发之前您可能需要了解：
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    - react [ 文档：https://react.docschina.org/docs/getting-started.html ]
+    - ant [ 文档：https://ant.design/components/button-cn/ ]
 
-### `yarn eject`
+  #### 项目结构：
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    - /config 配置工具
+    - /script 命令配置
+    - /public 静态目录，存放 img 等资源
+    - /src 核心代码
+      - src/component 通用组件
+      - src/pages 逻辑页面
+      - src/scss
+      - src/store 数据存储及更新
+      - src/utils 工具函数
+      - src/apiRequest 请求目录
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 规范：
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  #### commit 规范
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    例: `type:(scope) Message`
 
-## Learn More
+    type:
+      - feature: 新功能 (feature)
+      - fix: 修补 bug
+      - docs: 文档 (documentation)
+      - style: 格式 (不影响代码运行的变动)
+      - refactor: 重构 (即不是新增功能，也不是修改 bug 的代码变动)
+      - test: 增加测试
+      - chore： 构建过程或辅助工具的变动
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    scope: commit 改动的范围，可省略
+    Message: commit 改动信息，首字母大写，结尾不带符号，尽量简洁明了
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    例: `feat:(nav) Add navigation in header`
 
-### Code Splitting
+  #### css 规范
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    css 采用 `BEM` 命名格式:
 
-### Analyzing the Bundle Size
+      `BlockElementModifier` 是块（block）、元素（element）、修饰符（modifier），这三个部分使用 `__` 与 `--` 连接
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+      例: .block__element--modifier {}
 
-### Making a Progressive Web App
+      - block 代表了更高级别的抽象或组件
+      - block__element 代表 block 的后代，用于形成一个完整的 block 的整体
+      - block--modifier代表 block 的不同状态或不同版本
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+      例: .app-header__nav--target
 
-### Advanced Configuration
+    css 属性的书写一般有个顺序，依次为：
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+      1. position
+      2. display
+      3. height, width
+      4. top, left, right... [也可根据个人习惯写在 position 后面]
+      5. margin, padding
+      6. 其它外观类样式
+      7. cursor
 
-### Deployment
+  #### 代码规范
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    - 一个文件一般不要超过 500 行，特殊情况除外
+    - 每个文件末尾增加一行空行
+    - 去掉冗余的注释和未使用的变量及函数
+    - 项目启动后，根据 console 控制台的 eslint 警告修改以规范代码
+    - ...
 
-### `yarn build` fails to minify
+## 部署：
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  `yarn build` 或 `npm run build`
+
+  在部署之前，请运行该命令。
+
+  build 会优化构建以获得最佳性能，例如文件会被压缩，文件名包括哈希值等。
+
+  应用程序会打包到 `build` 文件夹，将之部署到服务器即可。
